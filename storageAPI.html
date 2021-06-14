@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage API</title>
+</head>
+<body>
+    <form name="myForm">
+            Name:<input type="text" name="theName">
+            Password:<input type="text" name="thePassword">
+            <button onclick="check(event)">Log in</button>
+    </form>
+    <p id="demo"></p>
+
+    <script>
+        function check(event) {
+            event.preventDefault();
+
+            var div = document.querySelector("#demo");
+            var theName = document.myForm.theName.value;
+            var thePassword = document.myForm.thePassword.value;
+
+            localStorage.setItem("name","Libuše Babičková");
+            localStorage.setItem("password","123456789");
+
+            var checkName = localStorage.getItem("name")
+            var checkPassword = localStorage.getItem("password")
+
+            if (theName == checkName && thePassword == checkPassword) {
+                div.innerHTML = "Successful";
+            } else {
+                div.innerHTML = "Password or Name is incorrect";
+            }
+
+            var x = localStorage.length;
+            console.log(x);
+        }
+
+        // The sessionStorage object is identical to the localStorage object.
+        // The difference is that the sessionStorage object stores data for one session.
+        // The data is deleted when the browser is closed.
+        
+    </script>
+</body>
+</html>

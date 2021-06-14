@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History API</title>
+</head>
+<body onload="length()">
+    <button onclick="goBack()">Go back</button>
+    <button onclick="goForward()">Go forward</button>
+    <button onclick="go()">Go 2 back</button>
+    <div id="demo">History length: </div>
+    <script>
+
+        // History Object Methods
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function goForward() {
+            window.history.forward();
+        }
+
+        function go() {
+            window.history.go(-2);
+        }
+
+        // History Object Properties
+
+        function length() {
+            document.querySelector("#demo").innerHTML += history.length;
+        }
+        
+    </script>
+</body>
+</html>
