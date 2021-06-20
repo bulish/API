@@ -5,7 +5,7 @@ function check(event) {
 	var theName = document.myForm.theName.value;
 	var thePassword = document.myForm.thePassword.value;
 
-	localStorage.setItem('name', 'Libuše Babičková');
+	localStorage.setItem('name', 'Uršula Pokorná');
 	localStorage.setItem('password', '123456789');
 
 	var checkName = localStorage.getItem('name');
